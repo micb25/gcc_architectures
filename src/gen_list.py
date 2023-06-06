@@ -9,7 +9,7 @@ for arch in archs:
     print(arch)
     os.system('LANG=C gcc -Q -march={} --help=target | grep enabled > ../architectures/{}.txt'.format(arch, arch))
 
-for optlevel in "O1 O2 O3 Os Og".split():
+for optlevel in "O0 O1 O2 O3 Ofast Os Oz Og".split():
     print(optlevel)
     os.system('LANG=C gcc -Q -{} --help=optimizers | grep enabled > ../optlevel/{}.txt'.format(optlevel, optlevel))
 
